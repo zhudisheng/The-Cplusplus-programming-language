@@ -2,12 +2,24 @@
 
 IntArray::IntArray(int len)
 {
-	m_pointer = new int[len];
-	for(int i = 0;i < len;i++)
-	{
-		m_pointer[i] = 0;
-	}
 	m_length = len;
+}
+bool IntArray::construct()
+{
+	bool ret = true;
+	m_pointer = new int[m_length];
+	if(m_pointer)
+	{
+		for(int i = 0;i < m_length;i++)
+		{
+			m_pointer[i] = 0;
+		}
+	}
+	else
+	{
+		ret = false;
+	}
+	return ret;
 }
 IntArray::IntArray(const IntArray& obj)
 {
@@ -21,6 +33,16 @@ IntArray::IntArray(const IntArray& obj)
 int IntArray::length()
 {
 	return m_length;
+}
+IntArray* IntArray::NewInstance(int length)
+{
+	IntArray* ret = new IntArray(length);
+	if(!(ret && ret->construct()))	
+	{
+		delete ret;
+		ret = 0;
+	}
+	return ret;
 }
 bool IntArray::get(int index,int&value)
 {

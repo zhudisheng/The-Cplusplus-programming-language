@@ -3,6 +3,7 @@
 
 int main()
 {
+	/*
 	IntArray a(5);
 	for(int i = 0;i < a.length();i++)
 	{
@@ -25,6 +26,16 @@ int main()
 			printf("b[%d] = %d\n",i,value);
 		}
 	
+	}
+	*/
+	IntArray* a = IntArray::NewInstance(5);
+	printf("a.length = %d\n",a->length());
+	a->set(0,1);
+	for(int i = 0;i < a->length();i++)
+	{
+		int v = 0;
+		a->get(i,v);
+		printf("a[%d] = %d\n",i,v);
 	}
 	return 0;
 }
