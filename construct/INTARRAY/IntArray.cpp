@@ -34,6 +34,25 @@ int& IntArray::operator[](int index)
 {
 	return m_pointer[index];
 }
+IntArray& IntArray::operator= (const IntArray&obj)
+{
+	if(this != &obj)
+	{
+		int *pointer = new int[obj.m_length];
+		if(pointer)
+		{
+			for(int i = 0;i < obj.m_length;i++)
+			{
+				pointer[i] = obj.m_pointer[i];
+			}
+			m_length = obj.m_length;
+			delete[] m_pointer;
+			m_pointer = pointer;
+		}
+	}
+	return *this;
+}
+
 int IntArray::length()
 {
 	return m_length;

@@ -11,9 +11,10 @@ private:
 public:
 	static IntArray* NewInstance(int length);
 	int length();
-	int& operator[](int index);
 	bool get(int index,int& value);
 	bool set(int index,int value);
+	int& operator[](int index);
+	IntArray& operator= (const IntArray&obj);
 	IntArray& self();
 	~IntArray();
 };
