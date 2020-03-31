@@ -1,5 +1,8 @@
-#include <stdio.h>
+
+#include <iostream>
+#include <string>
 #include "IntArray.h"
+using namespace std;
 
 int main()
 {
@@ -27,7 +30,6 @@ int main()
 		}
 	
 	}
-	*/
 	IntArray* a = IntArray::NewInstance(5);
 	printf("a.length = %d\n",a->length());
 	a->set(0,1);
@@ -37,5 +39,19 @@ int main()
 		a->get(i,v);
 		printf("a[%d] = %d\n",i,v);
 	}
+	*/
+	IntArray *a = IntArray::NewInstance(5);
+	if(a != NULL)
+	{
+		IntArray& array = a->self();
+		cout << "array.length() = " << array.length() << endl;
+		array[0] = 1;
+		for(int i = 0;i < array.length();i++)
+		{
+			cout << array[i] << endl;
+		}
+	
+	}
+	delete a;
 	return 0;
 }

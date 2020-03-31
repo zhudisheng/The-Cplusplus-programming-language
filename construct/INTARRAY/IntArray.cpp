@@ -30,6 +30,10 @@ IntArray::IntArray(const IntArray& obj)
 		m_pointer[i] = obj.m_pointer[i];
 	}
 }
+int& IntArray::operator[](int index)
+{
+	return m_pointer[index];
+}
 int IntArray::length()
 {
 	return m_length;
@@ -62,6 +66,10 @@ bool IntArray::set(int index,int value)
 	}
 	return ret;
 } 
+IntArray& IntArray:: self()
+{
+	return *this;
+}
 IntArray::~IntArray()
 {
 	delete []m_pointer;
