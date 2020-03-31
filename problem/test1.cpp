@@ -10,6 +10,6 @@ int main()
 	
 	cout << p << endl;
 	s.append("abcde");
-	cout << p << endl;
+	cout << s << endl;
 	return 0;
 }
