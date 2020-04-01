@@ -19,5 +19,7 @@ public:
 	bool operator!= (const Complex& c);
 	
 	Complex& operator=(const Complex& c);
+	Complex& operator++();
+	Complex operator++(int);
 };
 #endif

@@ -22,6 +22,11 @@ int main()
 	printf("c1.a = %f,c1.b = %f\n",c1.getA(),c1.getB());
 	printf("c2.a = %f,c2.b = %f\n",c2.getA(),c2.getB());
 	printf("c3.a = %f,c3.b = %f\n",c3.getA(),c3.getB());
+	++c1;
+	printf("c1.a = %f,c1.b = %f\n",c1.getA(),c1.getB());
+	c2 = c1++;
+	printf("c2.a = %f,c2.b = %f\n",c2.getA(),c2.getB());
+	printf("c1.a = %f,c1.b = %f\n",c1.getA(),c1.getB());
 	
 	return 0;
 }

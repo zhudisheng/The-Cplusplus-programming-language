@@ -67,3 +67,18 @@ Complex& Complex::operator=(const Complex& c)
 	}
 	return *this;
 }
+Complex& Complex::operator++()
+{
+	a = a+1;	
+	b = b+1;
+	return *this;
+}
+
+Complex Complex::operator++(int)
+{
+	Complex ret(a,b);
+	a = a+1;
+	b = b+1;
+	return ret;
+}
+
