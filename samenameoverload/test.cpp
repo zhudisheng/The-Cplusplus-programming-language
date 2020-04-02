@@ -30,12 +30,17 @@ int main()
 	Parent p;
 	Child c;
 	p = c;
+	p.mi =111;
 	Parent p1(c);
 	Parent &rp = c;
 	Parent *pp = &c;
+	//p.add(1,3,3);
+	//p.mv = 3333;
 	
 	rp.mi = 100;
+	//rp.mv =111;
 	rp.add(5);
 	rp.add(10,10);
+	//rp.add(1,2,3);
 	return 0;
 }

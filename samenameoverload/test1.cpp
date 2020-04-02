@@ -41,6 +41,7 @@ int main()
 {
 	Parent p;
 	Child c;
+	c.print();
 	how_to_print(&p);
 	how_to_print(&c);
 
