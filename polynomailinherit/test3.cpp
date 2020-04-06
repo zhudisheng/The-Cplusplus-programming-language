@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stdio.h>
 
 using namespace std;
 
@@ -64,6 +65,8 @@ int main()
 {
 	Derived d(100);
 	Derived* p = &d;
+	
+	printf("sizeof(d) = %d",sizeof(d));
 	Interface1* pInt1 = &d;
 	Interface2* pInt2 = &d;
 	
