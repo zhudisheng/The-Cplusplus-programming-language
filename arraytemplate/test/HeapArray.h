@@ -33,4 +33,68 @@ bool HeapArray<T>::construct()
 	m_pointer = new T[m_length];
 	return m_pointer != NULL;
 }
+template
+<typename T>
+HeapArray<T>* HeapArray<T>::NewInstance(int length)
+{
+	HeapArray<T>* ret = new HeapArray<T>(length);
+	if(!(ret && ret->construct()))
+	{
+		delete ret;
+		ret = 0;
+	}
+	return ret;
+}
+template
+<typename T>
+int HeapArray<T>::length()
+{
+	return m_length;
+}
+template
+<typename T>
+bool HeapArray<T>::get(int index,T& value)
+{
+	bool ret = (0 <= index) && (index < length());
+	if(ret)
+	{
+		value = m_pointer[index];
+	}
+	return ret;
+}
+template 
+<typename T>
+bool HeapArray<T>::set(int index,T value)
+{
+	bool ret = (0 <= index)&&(index < length());
+	if(ret)
+	{
+		m_pointer[index] = value;
+	}
+	return ret;
+}
+template
+<typename T>
+T& HeapArray<T>::operator[](int index)
+{
+	return m_pointer[index];
+}
+template
+<typename T>
+T HeapArray<T>::operator[](int index) const
+{
+	return m_pointer[index];
+}
+template
+<typename T>
+HeapArray<T>& HeapArray<T>::self()
+{
+	return *this;
+}
+template
+<typename T>
+HeapArray<T>::~HeapArray()
+{
+	delete []m_pointer;
+}
 #endif

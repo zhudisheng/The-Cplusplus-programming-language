@@ -8,7 +8,7 @@ class Array
 public:	
 	int length();
 	bool set(int index,T value);
-	bool get(int index,T value);
+	bool get(int index,T& value);
 	T& operator[] (int index);
 	T operator[] (int index)const;
 	virtual ~Array();
